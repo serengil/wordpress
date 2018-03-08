@@ -52,10 +52,13 @@ public class ExportMedia {
 									String baseurl = link.substring("https://".length(), link.length());
 									String path = baseurl.substring(baseurl.indexOf("/"), baseurl.length() - filename.length());
 									//System.out.println(path);
-									
-									System.out.print(linkNum+"\t");
-									
-									saveFile(link, path, filename);
+
+									if(!link.substring(link.length()-1, link.length()).equals(">")){
+										
+										System.out.print(linkNum+"\t");
+										saveFile(link, path, filename);
+										
+									}
 									
 									linkNum++;
 									
